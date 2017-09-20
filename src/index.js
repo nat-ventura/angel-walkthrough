@@ -30,4 +30,7 @@ const App = () => {
 
 // 2.
 // Take this component's generated HTML and put it in the DOM
-ReactDOM.render(App);
+// Make sure to pass an instance and not a class--
+// All we have to do to make an instance is wrap it in JSX TAGS
+// We also need to specify an EXISTING DOM ELEMENT to render the element TO
+ReactDOM.render(<App />, document.querySelector('#root'));
