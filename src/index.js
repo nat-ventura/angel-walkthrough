@@ -3,12 +3,16 @@
 // This CREATES AND MANAGES COMPONENTS.
 import React from 'react';
 
-
 // The core React library knows how to work with React components.
 // but the module to render them is in React-DOM.
 // To render to the DOM, we don't use React, we use React-dom.
 // This INTERACTS WITH THE ACTUAL DOM.
 import ReactDOM from 'react-dom';
+
+// imports VideoList Component from Components
+// whenever we import from our own files, we have to specify a file reference
+// (unlike React from 'react')
+import VideoList from './Components/VideoList';
 
 // What is React?
 // React is a JS library used to produce HTML shown to a user in a browser.
@@ -25,7 +29,9 @@ import ReactDOM from 'react-dom';
 // We need to INSTANTIATE our components (make an instance)
 // Before trying to render them to the DOM.
 const App = () => {
-    return <div>myellow</div>;
+    return (
+    <div>myellow</div>
+);
 }
 
 // 2.
