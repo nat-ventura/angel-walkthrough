@@ -30,16 +30,16 @@ class SearchBar extends Component {
 
         // Creates a new imput element, and passes a PROP
         // onChange with a value of {this.onInputChange}
-        return <input onChange={this.onInputChange} />;
+        return <input onChange={(event) => console.log(event.target.value)} />;
     }
 
     // whenever we add an eventHandler, it needs to
     // be passed an event object
-    onInputChange(event) {
+    // onInputChange(event) {
         // target is specifically a reference to the input
         // event is an object
-        console.log(event.target.value);
-    }
+    //     console.log(event.target.value);
+    // }
 }
 
 export default SearchBar;
