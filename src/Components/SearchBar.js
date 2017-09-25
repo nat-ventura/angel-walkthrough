@@ -31,10 +31,22 @@ import React, { Component } from 'react';
 
 class SearchBar extends Component {
 // this is how we initialize state in a class-based component
+// FUNCTIONAL COMPONENTS DONT HAVE STATE-- ONLY CLASSED COMPONENTS
+//      constructor is first/only function called automatically whenever
+//      an instance of a class is created
     constructor(props) {
+        // component has its own constructor function
+        // when we define a method that is already defined on the parent class (Component)
+        //      we can call that parent's method by calling super!!!!
         super(props);
 
-        this.state = { term: '' };
+        this.state = { searchTerm: '' };
+        // whenever we use state, we initialize by creating a new object
+        //      and assigning that object to this.state
+        // the object we pass will also contain properties that we want to record ON THE STATE
+        // here, we want to record the property 'searchTerm' on state
+        // WHENEVER THE USER UPDATES THE SEARCH INPUT,
+        //      SEARCHTERM is the property where we want to record the user's change
     }
 
     // Every class must have a render method
