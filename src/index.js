@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
 // imports VideoList Component from Components
 // whenever we import from our own files, we have to specify a file reference
 // (unlike React from 'react')
-import VideoListItem from './Components/VideoListItem';
+import SearchBar from './Components/SearchBar';
 
 // What is React?
 // React is a JS library used to produce HTML shown to a user in a browser.
@@ -30,7 +30,7 @@ import VideoListItem from './Components/VideoListItem';
 // Before trying to render them to the DOM.
 const App = () => {
     return (
-    <VideoListItem />
+    <SearchBar />
 );
 }
 

@@ -17,7 +17,7 @@ import React, { Component } from 'react';
 // things are a little jank right now, because at first
 // I didn't want to do a search bar, but now I do...
 
-class VideoListItem extends Component {
+class SearchBar extends Component {
     // Every class must have a render method
     // That returns JSX in the render method
     render() {
@@ -26,7 +26,8 @@ class VideoListItem extends Component {
         // we just type on""={this.eventHanderName}
         // Whenever we use javascript variables in JSX--
         //      we wrap the variables in curly braces
-        
+        // the event handler will be triggered whenever the event occurs!!!!
+
         // Creates a new imput element, and passes a PROP
         // onChange with a value of {this.onInputChange}
         return <input onChange={this.onInputChange} />;
@@ -35,8 +36,10 @@ class VideoListItem extends Component {
     // whenever we add an eventHandler, it needs to
     // be passed an event object
     onInputChange(event) {
+        // target is specifically a reference to the input
+        // event is an object
         console.log(event.target.value);
     }
 }
 
-export default VideoListItem;
+export default SearchBar;
