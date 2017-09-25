@@ -78,9 +78,21 @@ class SearchBar extends Component {
         //      every time that the component re-renders, we get the
         //      updated this.state.searchTerm in the DOM
 
+        // CONTROLLED FIELD
+        // is a form element (like an input) whose value is set by the state, rather than the other way around
+        // right now, whenever our input changes, it causes the state to be updated.
+        // our input tells the state what it SHOULD be.
+        // BUT in an ideal world-- the STATE should tell the INPUT what the current value should be.
+        // let's update our text input to get its value from the state
+        // and learn what it's consequences are
+
+
+
         return (
             <div>
-                <input onChange={(event) => this.setState({ searchTerm: event.target.value})} />
+                <input
+                    value={this.state.term}
+                    onChange={(event) => this.setState({ searchTerm: event.target.value})} />
             </div>
         );
     }
