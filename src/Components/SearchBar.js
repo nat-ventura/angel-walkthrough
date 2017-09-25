@@ -17,6 +17,8 @@ import React, { Component } from 'react';
 
 // STATE!!!!! is a plain javascript object that is used to record
 // and REACT to user events.
+// IT EXISTS ON ALL CLASS-BASED COMPONENTS.
+//      Each instance of a class-based component has its own copy of state.
 // Each class-based component that we defined has its own state object.
 // Whenever a component's state IS CHANGED, the component immediately re-renders
 // And forces all of its children to re-render too.
@@ -41,12 +43,15 @@ class SearchBar extends Component {
         super(props);
 
         this.state = { searchTerm: '' };
-        // whenever we use state, we initialize by creating a new object
+        // we initialize state by creating a new object
         //      and assigning that object to this.state
         // the object we pass will also contain properties that we want to record ON THE STATE
         // here, we want to record the property 'searchTerm' on state
         // WHENEVER THE USER UPDATES THE SEARCH INPUT,
         //      SEARCHTERM is the property where we want to record the user's change
+        // ONLY INSIDE OF CONSTRUCTOR METHOD DO WE CHANGE STATE LIKE THIS.
+        // OTHERWISE, WE USE THIS.SETSTATE-- passing the object with the NEW STATE
+
     }
 
     // Every class must have a render method
@@ -61,7 +66,23 @@ class SearchBar extends Component {
 
         // Creates a new imput element, and passes a PROP
         // onChange with a value of {this.onInputChange}
-        return <input onChange={(event) => console.log(event.target.value)} />;
+
+        // whenever we update the input element, whenever we change its value--
+        // then our arrow function runs, because it's our event handler
+        // we set the this.state.searchTerm with the new value of the input
+        
+        // *** whenever we update our state, call this.setState ***
+        //      it causes our component to automatically re-render
+        //      and push all updated info from render method into the DOM
+        // Because our render method makes reference to this.state.searchTerm
+        //      every time that the component re-renders, we get the
+        //      updated this.state.searchTerm in the DOM
+
+        return (
+            <div>
+                <input onChange={(event) => this.setState({ searchTerm: event.target.value})} />
+            </div>
+        );
     }
 
     // whenever we add an eventHandler, it needs to
