@@ -14,10 +14,29 @@ import React, { Component } from 'react';
 // Now when the user types something, we want to know that they're typing something
 // We need an eventHandler, where we pass the element we want to monitor for events
 
-// things are a little jank right now, because at first
-// I didn't want to do a search bar, but now I do...
+
+// STATE!!!!! is a plain javascript object that is used to record
+// and REACT to user events.
+// Each class-based component that we defined has its own state object.
+// Whenever a component's state IS CHANGED, the component immediately re-renders
+// And forces all of its children to re-render too.
+
+// If SearchBar had some state, and that state changed, then
+// The render function would re-run.
+
+// Before using state in a component, we need to initialize the
+// STATE object by setting the property to a plain js object inside
+// the class's constructor method!!!!!!!
+
 
 class SearchBar extends Component {
+// this is how we initialize state in a class-based component
+    constructor(props) {
+        super(props);
+
+        this.state = { term: '' };
+    }
+
     // Every class must have a render method
     // That returns JSX in the render method
     render() {
